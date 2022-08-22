@@ -1,0 +1,9 @@
+dbclient.c
+dbserver.c
+Makefile
+responses.c
+responses.h
+stringstore.c
+subversion_log.txt
+.revision
+.username

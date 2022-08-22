@@ -1,0 +1,536 @@
+URL to view log online:
+https://source.eait.uq.edu.au/viewvc/csse2310-sem1-s4733491/trunk/a4/?view=log
+
+Retrieving logs at Fri Jun 3 14:24:59 AEST 2022
+------------------------------------------------------------------------
+r1 | uqpsutto | 2022-02-22 19:44:12 +1000 (Tue, 22 Feb 2022) | 1 line
+Changed paths:
+   A /play
+   A /prac
+   A /trunk
+   A /trunk/a1
+   A /trunk/a3
+   A /trunk/a4
+
+Initial repository structure
+
+
+------------------------------------------------------------------------
+r79 | s4733491 | 2022-05-15 21:24:06 +1000 (Sun, 15 May 2022) | 2 lines
+Changed paths:
+   A /trunk/a4/Makefile
+
+add a Makefile..
+
+
+Index: Makefile
+ Makefile |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+------------------------------------------------------------------------
+r80 | s4733491 | 2022-05-24 02:57:55 +1000 (Tue, 24 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   A /trunk/a4/dbclient.c
+
+add a dbclient file. writed a basic connection(send get to server)
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: dbclient.c
+ dbclient.c |  157 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 157 insertions(+)
+
+------------------------------------------------------------------------
+r81 | s4733491 | 2022-05-25 04:28:23 +1000 (Wed, 25 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   M /trunk/a4/dbclient.c
+
+dbclient pass all test..
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: dbclient.c
+ dbclient.c |  108 +++++++++++++++++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 84 insertions(+), 24 deletions(-)
+
+------------------------------------------------------------------------
+r82 | s4733491 | 2022-05-25 18:57:25 +1000 (Wed, 25 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbclient.c
+
+pass all test for cmd args. add content from server-multithread.c
+
+
+Index: dbclient.c
+ dbclient.c |  228 ++++++++++++++++++++++++++-----------------------------------
+ 1 file changed, 99 insertions(+), 129 deletions(-)
+
+------------------------------------------------------------------------
+r83 | s4733491 | 2022-05-25 18:58:23 +1000 (Wed, 25 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/Makefile
+
+update makefile:add  pthread flag.
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r84 | s4733491 | 2022-05-26 01:52:00 +1000 (Thu, 26 May 2022) | 2 lines
+Changed paths:
+   A /trunk/a4/dbserver.c
+
+add get_http_request to thread funtion..
+
+
+Index: dbserver.c
+ dbserver.c |  268 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 268 insertions(+)
+
+------------------------------------------------------------------------
+r85 | s4733491 | 2022-05-29 03:36:21 +1000 (Sun, 29 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   M /trunk/a4/dbserver.c
+
+put stringstore instance outside of while loop..
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: dbserver.c
+ dbserver.c |  193 +++++++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 125 insertions(+), 68 deletions(-)
+
+------------------------------------------------------------------------
+r86 | s4733491 | 2022-05-30 17:30:32 +1000 (Mon, 30 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+it is discovered in the stringstore.log,that key should not include a "/public".fixed that problem.
+
+
+Index: dbserver.c
+ dbserver.c |   30 +++++++++++++++++-------------
+ 1 file changed, 17 insertions(+), 13 deletions(-)
+
+------------------------------------------------------------------------
+r87 | s4733491 | 2022-05-30 17:49:15 +1000 (Mon, 30 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+add a delete processing. it didnt work well yet.
+
+
+Index: dbserver.c
+ dbserver.c |   61 +++++++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 39 insertions(+), 22 deletions(-)
+
+------------------------------------------------------------------------
+r88 | s4733491 | 2022-05-30 17:58:11 +1000 (Mon, 30 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+discovered my put response send a body. fixed  this problem by replace body with empty string.(pass 12.3)
+
+
+Index: dbserver.c
+ dbserver.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r89 | s4733491 | 2022-05-30 18:51:05 +1000 (Mon, 30 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+finally know need to check whether header[0]->value was allocated memory after reading new specification. now, the length value can be safely read to check header length and body's length.
+
+
+Index: dbserver.c
+ dbserver.c |   25 ++++++++++++++-----------
+ 1 file changed, 14 insertions(+), 11 deletions(-)
+
+------------------------------------------------------------------------
+r90 | s4733491 | 2022-05-30 19:00:53 +1000 (Mon, 30 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+the header[0]->value is a string,cannot be compared with int. fixed this by adding atoi()..(line:229). 
+
+
+Index: dbserver.c
+ dbserver.c |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r91 | s4733491 | 2022-05-31 02:50:53 +1000 (Tue, 31 May 2022) | 6 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   M /trunk/a4/dbserver.c
+   A /trunk/a4/responses.c
+   A /trunk/a4/responses.h
+
+add responses.c responses.h,
+modified Makefile,
+put most response construction into responses.c
+
+
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: dbserver.c
+ dbserver.c |  115 ++++++++++++++-----------------------------------------------
+ 1 file changed, 27 insertions(+), 88 deletions(-)
+Index: responses.c
+ responses.c |   84 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 84 insertions(+)
+Index: responses.h
+ responses.h |    7 +++++++
+ 1 file changed, 7 insertions(+)
+
+------------------------------------------------------------------------
+r92 | s4733491 | 2022-05-31 15:05:35 +1000 (Tue, 31 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+change getHTTPrequest from if loop to while loop
+
+
+Index: dbserver.c
+ dbserver.c |   76 +++++++++++++++++++++++--------------------------------------
+ 1 file changed, 29 insertions(+), 47 deletions(-)
+Index: responses.c
+ responses.c |   47 +++++++++++++++++++++++++++--------------------
+ 1 file changed, 27 insertions(+), 20 deletions(-)
+Index: responses.h
+ responses.h |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r93 | s4733491 | 2022-05-31 15:31:13 +1000 (Tue, 31 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+Adding: close filedescriptor in the end of thread
+
+
+Index: dbserver.c
+ dbserver.c |   10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r94 | s4733491 | 2022-05-31 16:19:26 +1000 (Tue, 31 May 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   M /trunk/a4/dbserver.c
+
+in argument checking, modified logic to make it work for three arguments.
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: dbserver.c
+ dbserver.c |   52 +++++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 33 insertions(+), 19 deletions(-)
+
+------------------------------------------------------------------------
+r95 | s4733491 | 2022-05-31 19:32:49 +1000 (Tue, 31 May 2022) | 5 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+add a private validation function to response.c
+passed 15.1,15.2
+
+
+
+
+Index: dbserver.c
+ dbserver.c |   32 ++++++++++++++++++++------------
+ 1 file changed, 20 insertions(+), 12 deletions(-)
+Index: responses.c
+ responses.c |   51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+Index: responses.h
+ responses.h |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r96 | s4733491 | 2022-05-31 19:40:28 +1000 (Tue, 31 May 2022) | 4 lines
+Changed paths:
+   M /trunk/a4/responses.c
+
+changed the get and delete requests checking to checking the headers[1] in the private validation function.
+
+passed 15.3,15.4,16.1..
+
+
+Index: responses.c
+ responses.c |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r97 | s4733491 | 2022-06-02 02:55:01 +1000 (Thu, 02 Jun 2022) | 5 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+add statistic struct
+add statistic struct to Myptr struct
+add sig_thread fuction
+sighup now can print correctly.
+
+
+Index: dbserver.c
+ dbserver.c |  186 +++++++++++++++++++++++++++++++++++++++++++++----------------
+ 1 file changed, 140 insertions(+), 46 deletions(-)
+Index: responses.c
+ responses.c |   33 +++++++++++++++++++++++++--------
+ 1 file changed, 25 insertions(+), 8 deletions(-)
+Index: responses.h
+ responses.h |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r98 | s4733491 | 2022-06-02 04:37:07 +1000 (Thu, 02 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+fixed most style error(indent,writespace,line-lenth)
+
+
+Index: dbserver.c
+ dbserver.c |  286 +++++++++++++++++++++++++------------------------------------
+ 1 file changed, 121 insertions(+), 165 deletions(-)
+Index: responses.c
+ responses.c |  151 +++++++++++++++++++++++++-----------------------------------
+ 1 file changed, 64 insertions(+), 87 deletions(-)
+Index: responses.h
+ responses.h |    1 -
+ 1 file changed, 1 deletion(-)
+
+------------------------------------------------------------------------
+r99 | s4733491 | 2022-06-02 06:38:23 +1000 (Thu, 02 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+reduce length of client function by put get_reponse processing into response.c.
+
+
+Index: dbserver.c
+ dbserver.c |   23 ++---------------------
+ 1 file changed, 2 insertions(+), 21 deletions(-)
+Index: responses.c
+ responses.c |   59 ++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 50 insertions(+), 9 deletions(-)
+Index: responses.h
+ responses.h |    8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r100 | s4733491 | 2022-06-02 22:03:21 +1000 (Thu, 02 Jun 2022) | 2 lines
+Changed paths:
+   A /trunk/a4/stringstore.c
+
+write a stringstore library code. it can already run but it is not bug free..
+
+
+Index: stringstore.c
+ stringstore.c |  178 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 178 insertions(+)
+
+------------------------------------------------------------------------
+r101 | s4733491 | 2022-06-03 00:57:34 +1000 (Fri, 03 Jun 2022) | 4 lines
+Changed paths:
+   M /trunk/a4/Makefile
+   M /trunk/a4/stringstore.c
+
+write stringstore memory free code, passed test
+add command to Makefile to compile stringstore to a library file.
+
+
+
+Index: Makefile
+ Makefile |   10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Index: stringstore.c
+ stringstore.c |  160 ++++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 91 insertions(+), 69 deletions(-)
+
+------------------------------------------------------------------------
+r102 | s4733491 | 2022-06-03 01:00:36 +1000 (Fri, 03 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/stringstore.c
+
+modify comments and indentation, white space.
+
+
+Index: stringstore.c
+ stringstore.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r103 | s4733491 | 2022-06-03 03:19:52 +1000 (Fri, 03 Jun 2022) | 3 lines
+Changed paths:
+   M /trunk/a4/dbclient.c
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+   M /trunk/a4/stringstore.c
+
+add comments to dbserver, stringstore and dbclient
+modified some bad names and magic numbers.
+
+
+Index: stringstore.c
+ stringstore.c |   16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+Index: dbclient.c
+ dbclient.c |  153 ++++++++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 101 insertions(+), 52 deletions(-)
+Index: dbserver.c
+ dbserver.c |  218 ++++++++++++++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 152 insertions(+), 66 deletions(-)
+Index: responses.c
+ responses.c |   54 +++++++++++++++++++++++++++---------------------------
+ 1 file changed, 27 insertions(+), 27 deletions(-)
+Index: responses.h
+ responses.h |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r104 | s4733491 | 2022-06-03 04:03:14 +1000 (Fri, 03 Jun 2022) | 3 lines
+Changed paths:
+   M /trunk/a4/dbclient.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+add comments to responses.c
+change name of some variable
+
+
+Index: dbclient.c
+ dbclient.c |   22 +---------------------
+ 1 file changed, 1 insertion(+), 21 deletions(-)
+Index: responses.c
+ responses.c |  146 +++++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 120 insertions(+), 26 deletions(-)
+Index: responses.h
+ responses.h |   12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r105 | s4733491 | 2022-06-03 04:05:39 +1000 (Fri, 03 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+change some lines that are too long
+
+
+Index: dbserver.c
+ dbserver.c |   20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+
+------------------------------------------------------------------------
+r106 | s4733491 | 2022-06-03 12:19:38 +1000 (Fri, 03 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+
+add a mutex lock to put and delete operetion.
+
+
+Index: dbserver.c
+ dbserver.c |    9 +++++++++
+ 1 file changed, 9 insertions(+)
+Index: responses.c
+ responses.c |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r107 | s4733491 | 2022-06-03 12:27:55 +1000 (Fri, 03 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+add a lock to get response..
+
+
+Index: dbserver.c
+ dbserver.c |    2 ++
+ 1 file changed, 2 insertions(+)
+
+------------------------------------------------------------------------
+r108 | s4733491 | 2022-06-03 14:09:53 +1000 (Fri, 03 Jun 2022) | 11 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+   M /trunk/a4/responses.c
+   M /trunk/a4/responses.h
+
+reducing the length of client_thread by :
+put 
+"public put response",
+"private put response",
+"public delete response",
+"private delete response"
+
+into response.c 
+
+
+
+
+Index: responses.c
+ responses.c |  140 +++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 102 insertions(+), 38 deletions(-)
+Index: dbserver.c
+ dbserver.c |   60 +++++++++++++++++++++---------------------------------------
+ 1 file changed, 21 insertions(+), 39 deletions(-)
+Index: responses.h
+ responses.h |   15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r109 | s4733491 | 2022-06-03 14:12:37 +1000 (Fri, 03 Jun 2022) | 3 lines
+Changed paths:
+   M /trunk/a4/dbserver.c
+
+pass all style check...
+
+
+
+Index: dbserver.c
+ dbserver.c |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r110 | s4733491 | 2022-06-03 14:24:52 +1000 (Fri, 03 Jun 2022) | 2 lines
+Changed paths:
+   M /trunk/a4/responses.h
+
+the line19 in response.h is toolong, fiexed it
+
+
+Index: responses.h
+ responses.h |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------

@@ -1,0 +1,665 @@
+URL to view log online:
+https://source.eait.uq.edu.au/viewvc/csse2310-sem1-s4733491/trunk/a1/?view=log
+
+Retrieving logs at Fri Apr 1 15:53:41 AEST 2022
+------------------------------------------------------------------------
+r1 | uqpsutto | 2022-02-22 19:44:12 +1000 (Tue, 22 Feb 2022) | 1 line
+Changed paths:
+   A /play
+   A /prac
+   A /trunk
+   A /trunk/a1
+   A /trunk/a3
+   A /trunk/a4
+
+Initial repository structure
+
+
+------------------------------------------------------------------------
+r5 | s4733491 | 2022-03-21 01:38:47 +1000 (Mon, 21 Mar 2022) | 2 lines
+Changed paths:
+   A /trunk/a1/Makefile
+
+add a Makefile which is the same as being told in class 
+
+
+Index: Makefile
+ Makefile |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+------------------------------------------------------------------------
+r6 | s4733491 | 2022-03-21 02:50:21 +1000 (Mon, 21 Mar 2022) | 2 lines
+Changed paths:
+   A /trunk/a1/wordle.c
+
+Add a basic argv reading loop,still need modification. 
+
+
+Index: wordle.c
+ wordle.c |   37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+------------------------------------------------------------------------
+r7 | s4733491 | 2022-03-21 03:22:42 +1000 (Mon, 21 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Move the argv reading part into a function.
+
+
+Index: wordle.c
+ wordle.c |   43 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 42 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r8 | s4733491 | 2022-03-22 03:04:51 +1000 (Tue, 22 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Add more things in main fuction including stdin, instruction outputs, geting_random word from EnvParameter.
+
+
+Index: wordle.c
+ wordle.c |   68 +++++++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 36 insertions(+), 32 deletions(-)
+
+------------------------------------------------------------------------
+r9 | s4733491 | 2022-03-22 03:17:02 +1000 (Tue, 22 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+put get_random_word call outside of while loop.it should be down in the beginning.
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r10 | s4733491 | 2022-03-26 17:11:02 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Add a dictionary path reading function
+
+
+Index: wordle.c
+ wordle.c |  122 +++++++++++++++++++++++++++++++++++++++++++--------------------
+ 1 file changed, 85 insertions(+), 37 deletions(-)
+
+------------------------------------------------------------------------
+r11 | s4733491 | 2022-03-26 17:54:39 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify  dictionnary reading fun, add default path.
+
+
+Index: wordle.c
+ wordle.c |   22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r12 | s4733491 | 2022-03-26 19:40:03 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Add a input saving array
+
+
+Index: wordle.c
+ wordle.c |   49 ++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 46 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r13 | s4733491 | 2022-03-26 20:14:32 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Add usage error(exit with code 1) to argument reading fun. 
+
+
+Index: wordle.c
+ wordle.c |   20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+------------------------------------------------------------------------
+r14 | s4733491 | 2022-03-26 20:25:23 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify usage error validation.
+
+
+Index: wordle.c
+ wordle.c |   10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+------------------------------------------------------------------------
+r15 | s4733491 | 2022-03-26 20:47:27 +1000 (Sat, 26 Mar 2022) | 3 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+
+modify usage error validation.
+
+
+Index: wordle.c
+ wordle.c |   12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r16 | s4733491 | 2022-03-26 21:21:13 +1000 (Sat, 26 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+Add a file reading error validation (exit code 2).
+
+
+Index: wordle.c
+ wordle.c |   25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r17 | s4733491 | 2022-03-27 20:23:00 +1000 (Sun, 27 Mar 2022) | 4 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/wordle.c
+
+change output filename in Makefile
+add all validation print,still not complete
+add a output of array, still need modify
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: wordle.c
+ wordle.c |   62 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 55 insertions(+), 7 deletions(-)
+
+------------------------------------------------------------------------
+r18 | s4733491 | 2022-03-27 20:33:42 +1000 (Sun, 27 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+commented all extra printf.
+
+
+Index: wordle.c
+ wordle.c |   26 ++++++++++++++------------
+ 1 file changed, 14 insertions(+), 12 deletions(-)
+
+------------------------------------------------------------------------
+r19 | s4733491 | 2022-03-27 23:35:39 +1000 (Sun, 27 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+something wrong with exit code 1 validation
+
+
+Index: wordle.c
+ wordle.c |   73 +++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 64 insertions(+), 9 deletions(-)
+
+------------------------------------------------------------------------
+r20 | s4733491 | 2022-03-27 23:45:15 +1000 (Sun, 27 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+replace perror with printf
+
+
+Index: wordle.c
+ wordle.c |   22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+------------------------------------------------------------------------
+r21 | s4733491 | 2022-03-27 23:46:45 +1000 (Sun, 27 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change default dictionary to s.
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r22 | s4733491 | 2022-03-27 23:47:43 +1000 (Sun, 27 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+last commit can not been compile.
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r23 | s4733491 | 2022-03-28 00:49:04 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change dictionary perror to fprint.
+
+
+Index: wordle.c
+ wordle.c |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r24 | s4733491 | 2022-03-28 01:09:01 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+fix all is digit funtion.
+
+
+Index: wordle.c
+ wordle.c |   15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r25 | s4733491 | 2022-03-28 01:17:36 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+fix "number of arg" checking code.
+
+
+Index: wordle.c
+ wordle.c |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r26 | s4733491 | 2022-03-28 01:40:07 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add arg nummber checking (too little arg..)
+
+
+Index: wordle.c
+ wordle.c |   25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r27 | s4733491 | 2022-03-28 01:48:00 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+when default path being passed in, exit with code 1..
+
+
+Index: wordle.c
+ wordle.c |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+------------------------------------------------------------------------
+r28 | s4733491 | 2022-03-28 02:02:22 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add a "-max number -max", "-len number -len" checking...
+
+
+Index: wordle.c
+ wordle.c |   24 ++++++++++++++++++++----
+ 1 file changed, 20 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r29 | s4733491 | 2022-03-28 02:09:57 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modified arg number checking "too much arg"--remove = sign
+
+
+Index: wordle.c
+ wordle.c |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r30 | s4733491 | 2022-03-28 02:13:53 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+comment extra printf.
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r31 | s4733491 | 2022-03-28 02:19:44 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify 3.1(input_word_length) prints
+
+
+Index: wordle.c
+ wordle.c |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r32 | s4733491 | 2022-03-28 02:49:32 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modified allisalpha function...
+
+
+Index: wordle.c
+ wordle.c |   26 ++++++++++++++++++++------
+ 1 file changed, 20 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r33 | s4733491 | 2022-03-28 02:53:21 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify atmp_remain++ line.
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r34 | s4733491 | 2022-03-28 02:56:11 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify isvalid function return logic..
+
+
+Index: wordle.c
+ wordle.c |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r35 | s4733491 | 2022-03-28 03:19:59 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change default path back...
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r36 | s4733491 | 2022-03-28 03:20:40 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change default path back ......
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r37 | s4733491 | 2022-03-28 11:26:17 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change fgets to fread...
+
+
+Index: wordle.c
+ wordle.c |   15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+------------------------------------------------------------------------
+r38 | s4733491 | 2022-03-28 11:57:35 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add a bad luck error to stdin...
+
+
+Index: wordle.c
+ wordle.c |    9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r39 | s4733491 | 2022-03-28 12:29:50 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modify the stdin feof if block...add break;...
+
+
+Index: wordle.c
+ wordle.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r40 | s4733491 | 2022-03-28 18:07:16 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change the way eof is checked in userinput...
+
+
+Index: wordle.c
+ wordle.c |   38 ++++++++++++++++++++++++--------------
+ 1 file changed, 24 insertions(+), 14 deletions(-)
+
+------------------------------------------------------------------------
+r41 | s4733491 | 2022-03-28 18:20:07 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change the sequence of validating userinputs.
+
+
+Index: wordle.c
+ wordle.c |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r42 | s4733491 | 2022-03-28 19:57:50 +1000 (Mon, 28 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add a hint print function, something wrong with isvalid function.....
+
+
+Index: wordle.c
+ wordle.c |   40 +++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 37 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r43 | s4733491 | 2022-03-29 00:34:17 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+merge r39 and r42,fix the problem of strcasestr...
+
+
+Index: wordle.c
+ wordle.c |   60 +++++++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 39 insertions(+), 21 deletions(-)
+
+------------------------------------------------------------------------
+r44 | s4733491 | 2022-03-29 00:38:25 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+remove extra printf
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r45 | s4733491 | 2022-03-29 00:49:31 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+fix userinput return value,using strcpy()....
+
+
+Index: wordle.c
+ wordle.c |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r46 | s4733491 | 2022-03-29 01:05:17 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add a print_userinput function to main()....
+
+
+Index: wordle.c
+ wordle.c |    9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r47 | s4733491 | 2022-03-29 01:11:41 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+modified print loop in userinput function. for each word,the /0 will not be printed...
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r48 | s4733491 | 2022-03-29 01:14:00 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+change "last attemps" to "last attempt"  in print_instruction function...
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r49 | s4733491 | 2022-03-29 02:10:18 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add correct logic and a exit3 when attemps==0...
+
+
+Index: wordle.c
+ wordle.c |   57 ++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 40 insertions(+), 17 deletions(-)
+
+------------------------------------------------------------------------
+r50 | s4733491 | 2022-03-29 03:01:59 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/wordle.c
+
+deleted some unused variable...
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: wordle.c
+ wordle.c |   29 ++++++++++++-----------------
+ 1 file changed, 12 insertions(+), 17 deletions(-)
+
+------------------------------------------------------------------------
+r51 | s4733491 | 2022-03-29 03:03:02 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+comment printf
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r52 | s4733491 | 2022-03-29 03:18:45 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+correct hints funcion for two number appear.... 
+
+
+Index: wordle.c
+ wordle.c |   11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r53 | s4733491 | 2022-03-29 04:13:15 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+add a /n to word got from fet_random_word and checking the line without eof(ctrl-d)...
+
+
+Index: wordle.c
+ wordle.c |   30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+------------------------------------------------------------------------
+r54 | s4733491 | 2022-03-29 04:19:00 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+remove extra prints, add word1=word+'\n'
+
+
+Index: wordle.c
+ wordle.c |   18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
+
+------------------------------------------------------------------------
+r55 | s4733491 | 2022-03-29 04:24:27 +1000 (Tue, 29 Mar 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+comment extra printf....
+
+
+Index: wordle.c
+ wordle.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r56 | s4733491 | 2022-04-01 14:26:23 +1000 (Fri, 01 Apr 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+latest modification about format......
+
+
+Index: wordle.c
+ wordle.c |  532 ++++++++++++++++++++++++++++++---------------------------------
+ 1 file changed, 255 insertions(+), 277 deletions(-)
+
+------------------------------------------------------------------------
+r57 | s4733491 | 2022-04-01 15:51:04 +1000 (Fri, 01 Apr 2022) | 2 lines
+Changed paths:
+   M /trunk/a1/wordle.c
+
+style problem... 
+
+
+Index: wordle.c
+ wordle.c |   83 ++++++++++++++++-----------------------------------------------
+ 1 file changed, 22 insertions(+), 61 deletions(-)
+
+------------------------------------------------------------------------
